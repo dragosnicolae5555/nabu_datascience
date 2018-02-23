@@ -1,7 +1,7 @@
 # nabu_datascience
 
- To run the script please use the 
- python demo.py -i <path_to_videofile> 
+ To run the script please use  
+ python v1.py -i <path_to_videofile> 
  
  the script is GPU enabeled
 
