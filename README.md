@@ -1,9 +1,19 @@
 # nabu_datascience
 
- To run the script please use  
- python v1.py -i <path_to_videofile> 
+### Requirements
+
+To satisfy requirments please create new conda environment
+* make sure you have conda installed
+* go inside the repo folder
+* run `conda env update` - it will create the `nabu` environment
  
- the script is GPU enabeled
+### Running
+To run the script on the video follow the steps:
+* change the video path and other parameters inside `defaults.py`
+* change the conda env `source activate nabu`
+* run the code `python run.py`
 
-
- Nabu.ai  
+### Notes
+* the pyannote package was copied to the repo to allow modyfing the function and classes
+* sortedcollections pyckage was copied becouse of the bug in the official repo (update method of ValueSortedDict was corrupted)
+* the code was tested on ubuntu

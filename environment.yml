@@ -1,0 +1,38 @@
+name: nabu
+channels:
+- defaults
+- pytorch
+dependencies:
+- anaconda
+- numpy
+- scipy
+- cuda90
+- cudnn
+- sortedcontainers
+- pillow
+- decorator
+- ipykernel
+- ipython
+- jupyter
+- jupyter_client
+- jupyter_console
+- jupyter_core
+- matplotlib
+- pandas
+- path.py
+- pip
+- python>=3.6.0
+- python-dateutil
+- msgpack-python
+- six
+- pytest
+- xarray
+- simplejson
+- pip:
+  - opencv-python
+  - msgpack
+  - dlib
+  - munkres
+  - moviepy
+  
+

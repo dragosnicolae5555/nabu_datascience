@@ -7,12 +7,22 @@ bin-release/
 
 # Other files and folders
 .settings/
+**/__pycache__
+**/.vscode
+
+/sample/*
+!/sample/*avi
+!/sample/*mkv
 
 # Executables
 *.swf
 *.air
 *.ipa
 *.apk
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
