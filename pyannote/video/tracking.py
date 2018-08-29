@@ -34,6 +34,8 @@ import numpy as np
 import networkx as nx
 from munkres import Munkres
 import dlib
+from facenet.src.align.detect_face import bulk_detect_face, create_mtcnn
+import tensorflow as tf
 
 FORWARD = 'forward'
 BACKWARD = 'backward'
@@ -371,7 +373,7 @@ class TrackingByDetection(object):
             normalized_track.append((t, (left, top, right, bottom), status))
         return normalized_track
 
-    def __call__(self, video, segmentation):
+    def __call__(self, video, segmentation=None):
         """
         Parameters
         ----------
@@ -399,36 +401,49 @@ class TrackingByDetection(object):
         frame_height = int(height * ratio)
         video.frame_size = (frame_width, frame_height)
 
-        segment_generator = get_segment_generator(segmentation)
-        segment_generator.send(None)
+        video_len = video._nframes
+        bulk_img = []
+        bulk_t = []
+        detection_batch_size = 20
         self._reset()
+        with tf.Graph().as_default():
+            sess = tf.Session()
+            with sess.as_default():
+                pnet, rnet, onet = create_mtcnn(sess, None)
 
-        for i, (t, frame) in enumerate(video):
+                for i, (t, frame) in enumerate(video):
 
-            segment = segment_generator.send(t)
+                    is_last_frame=video_len-2==i
 
-            if segment:
+                    # cache frame (for faster tracking)
+                    if i % 1 == 0 or is_last_frame:
+                        self._frame_cache.append((t, frame))
+                        self._tracking_graph.add_node(t)
 
-                # forward/backward tracking
+                    # apply detection every x frames
+                    if i % every_x_frames == 0 or is_last_frame:
+                        #collect frames until batch_size is reached
+                        bulk_img.append(frame)
+                        bulk_t.append(t)
+
+                        if len(bulk_t) == detection_batch_size or is_last_frame:
+                            ret = bulk_detect_face(bulk_img, 0.1, pnet, rnet, onet, [0.6, 0.7, 0.7], 0.9)
+                            for i, boxpoint in enumerate(ret):
+                                if boxpoint is not None:
+                                    for box in boxpoint[0]:
+                                        detection = tuple([int(a) for a in box[:4]])
+                                        self._tracking_graph.add_edge(bulk_t[i], (bulk_t[i], detection, DETECTION))
+                            bulk_img.clear()
+                            bulk_t.clear()
+                            ret.clear()
+
+
+                        # for detection in self.detect_func(frame):
+                        #     self._tracking_graph.add_edge(t, (t, detection, DETECTION))
+
                 for track in self._forward_backward():
                     yield self._normalize_track(track, frame_width, frame_height)
 
-                # start fresh for next segment
-                self._reset()
-
-            # cache frame (for faster tracking)
-            self._frame_cache.append((t, frame))
-
-            self._tracking_graph.add_node(t)
-
-            # apply detection every x frames
-            if i % every_x_frames == 0:
-                for detection in self.detect_func(frame):
-                    self._tracking_graph.add_edge(t, (t, detection, DETECTION))
-
-        for track in self._forward_backward():
-            yield self._normalize_track(track, frame_width, frame_height)
-
-        # revert frame size to its original setting
-        if self.detect_min_size > 0.0:
-            video.frame_size = (old_frame_width, old_frame_height)
+                # revert frame size to its original setting
+                if self.detect_min_size > 0.0:
+                    video.frame_size = (old_frame_width, old_frame_height)

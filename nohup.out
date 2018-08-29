@@ -1,0 +1,99 @@
+[I 12:46:01.953 NotebookApp] The port 8888 is already in use, trying another port.
+[I 12:46:01.953 NotebookApp] The port 8889 is already in use, trying another port.
+[I 12:46:01.972 NotebookApp] JupyterLab beta preview extension loaded from /home/rafal/anaconda3/envs/nabu/lib/python3.6/site-packages/jupyterlab
+[I 12:46:01.972 NotebookApp] JupyterLab application directory is /home/rafal/anaconda3/envs/nabu/share/jupyter/lab
+[I 12:46:01.975 NotebookApp] Serving notebooks from local directory: /home/rafal/nabu/nabu_datascience
+[I 12:46:01.975 NotebookApp] 0 active kernels
+[I 12:46:01.975 NotebookApp] The Jupyter Notebook is running at:
+[I 12:46:01.975 NotebookApp] http://localhost:8890/?token=9e02638e0332e76b7df4319f93f4fbff8bf227a004c3d7ef
+[I 12:46:01.975 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 12:46:01.975 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8890/?token=9e02638e0332e76b7df4319f93f4fbff8bf227a004c3d7ef&token=9e02638e0332e76b7df4319f93f4fbff8bf227a004c3d7ef
+[I 12:46:02.136 NotebookApp] Accepting one-time-token-authenticated connection from 127.0.0.1
+[I 12:46:14.741 NotebookApp] Creating new notebook in 
+[I 12:46:15.310 NotebookApp] Kernel started: 298d5287-b4c5-48ea-b874-764757e4998d
+[W 12:46:15.319 NotebookApp] 404 GET /nbextensions/code_prettify/code_prettify.js?v=20180629124601 (127.0.0.1) 4.81ms referer=http://localhost:8890/notebooks/Untitled.ipynb?kernel_name=python3
+[W 12:46:15.321 NotebookApp] 404 GET /nbextensions/collapsible_headings/main.js?v=20180629124601 (127.0.0.1) 1.06ms referer=http://localhost:8890/notebooks/Untitled.ipynb?kernel_name=python3
+[W 12:46:15.371 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20180629124601 (127.0.0.1) 0.95ms referer=http://localhost:8890/notebooks/Untitled.ipynb?kernel_name=python3
+[I 12:46:15.693 NotebookApp] Adapting to protocol v5.1 for kernel 298d5287-b4c5-48ea-b874-764757e4998d
+[I 12:48:15.329 NotebookApp] Saving file at /Untitled.ipynb
+[I 12:50:15.322 NotebookApp] Saving file at /Untitled.ipynb
+[I 13:14:15.359 NotebookApp] Saving file at /Untitled.ipynb
+[I 13:16:15.333 NotebookApp] Saving file at /Untitled.ipynb
+[I 13:48:15.330 NotebookApp] Saving file at /Untitled.ipynb
+[I 14:00:15.319 NotebookApp] Saving file at /Untitled.ipynb
+[I 18:34:00.983 NotebookApp] Starting buffering for 298d5287-b4c5-48ea-b874-764757e4998d:d7662e72549848329580b6658295d017
+[W 18:34:12.885 NotebookApp] Forbidden
+[W 18:34:12.885 NotebookApp] 403 GET /api/sessions?_=1530269162281 (127.0.0.1) 0.97ms referer=http://localhost:8890/tree
+[W 18:34:12.886 NotebookApp] Forbidden
+[W 18:34:12.887 NotebookApp] 403 GET /api/terminals?_=1530269162282 (127.0.0.1) 0.88ms referer=http://localhost:8890/tree
+[W 18:35:38.426 NotebookApp] Forbidden
+[W 18:35:38.427 NotebookApp] 403 GET /api/sessions?_=1530269162283 (127.0.0.1) 0.68ms referer=http://localhost:8890/tree
+[W 18:35:38.427 NotebookApp] Forbidden
+[W 18:35:38.428 NotebookApp] 403 GET /api/terminals?_=1530269162284 (127.0.0.1) 0.57ms referer=http://localhost:8890/tree
+[W 18:40:42.160 NotebookApp] Forbidden
+[W 18:40:42.160 NotebookApp] 403 GET /api/sessions?_=1530269162285 (127.0.0.1) 0.60ms referer=http://localhost:8890/tree
+[W 18:40:42.161 NotebookApp] Forbidden
+[W 18:40:42.161 NotebookApp] 403 GET /api/terminals?_=1530269162286 (127.0.0.1) 0.49ms referer=http://localhost:8890/tree
+[W 10:32:04.869 NotebookApp] Forbidden
+[W 10:32:04.869 NotebookApp] 403 GET /api/sessions?_=1530269162287 (127.0.0.1) 0.75ms referer=http://localhost:8890/tree
+[W 10:32:04.870 NotebookApp] Forbidden
+[W 10:32:04.870 NotebookApp] 403 GET /api/terminals?_=1530269162288 (127.0.0.1) 0.96ms referer=http://localhost:8890/tree
+[W 10:32:58.711 NotebookApp] Forbidden
+[W 10:32:58.711 NotebookApp] 403 GET /api/sessions?_=1530269162289 (127.0.0.1) 0.93ms referer=http://localhost:8890/tree
+[W 10:32:58.712 NotebookApp] Forbidden
+[W 10:32:58.712 NotebookApp] 403 GET /api/terminals?_=1530269162290 (127.0.0.1) 0.79ms referer=http://localhost:8890/tree
+[W 10:39:09.990 NotebookApp] Forbidden
+[W 10:39:09.990 NotebookApp] 403 GET /api/sessions?_=1530269162291 (127.0.0.1) 0.89ms referer=http://localhost:8890/tree
+[W 10:39:09.996 NotebookApp] Forbidden
+[W 10:39:09.996 NotebookApp] 403 GET /api/terminals?_=1530269162292 (127.0.0.1) 0.74ms referer=http://localhost:8890/tree
+[W 10:39:56.789 NotebookApp] Forbidden
+[W 10:39:56.790 NotebookApp] 403 GET /api/terminals?_=1530269162294 (127.0.0.1) 0.72ms referer=http://localhost:8890/tree
+[W 10:39:56.791 NotebookApp] Forbidden
+[W 10:39:56.791 NotebookApp] 403 GET /api/sessions?_=1530269162293 (127.0.0.1) 0.62ms referer=http://localhost:8890/tree
+[W 10:50:16.093 NotebookApp] Forbidden
+[W 10:50:16.094 NotebookApp] 403 GET /api/sessions?_=1530269162295 (127.0.0.1) 0.90ms referer=http://localhost:8890/tree
+[W 10:50:16.095 NotebookApp] Forbidden
+[W 10:50:16.095 NotebookApp] 403 GET /api/terminals?_=1530269162296 (127.0.0.1) 0.80ms referer=http://localhost:8890/tree
+[W 10:51:19.526 NotebookApp] Forbidden
+[W 10:51:19.527 NotebookApp] 403 GET /api/sessions?_=1530269162297 (127.0.0.1) 1.04ms referer=http://localhost:8890/tree
+[W 10:51:19.527 NotebookApp] Forbidden
+[W 10:51:19.528 NotebookApp] 403 GET /api/terminals?_=1530269162298 (127.0.0.1) 0.76ms referer=http://localhost:8890/tree
+[W 11:00:41.604 NotebookApp] Forbidden
+[W 11:00:41.604 NotebookApp] 403 GET /api/sessions?_=1530269162299 (127.0.0.1) 0.79ms referer=http://localhost:8890/tree
+[W 11:00:41.605 NotebookApp] Forbidden
+[W 11:00:41.606 NotebookApp] 403 GET /api/terminals?_=1530269162300 (127.0.0.1) 0.68ms referer=http://localhost:8890/tree
+[W 11:03:11.044 NotebookApp] Forbidden
+[W 11:03:11.045 NotebookApp] 403 GET /api/sessions?_=1530269162301 (127.0.0.1) 0.99ms referer=http://localhost:8890/tree
+[W 11:03:11.046 NotebookApp] Forbidden
+[W 11:03:11.046 NotebookApp] 403 GET /api/terminals?_=1530269162302 (127.0.0.1) 1.07ms referer=http://localhost:8890/tree
+[W 11:45:30.607 NotebookApp] Forbidden
+[W 11:45:30.608 NotebookApp] 403 GET /api/sessions?_=1530269162303 (127.0.0.1) 0.59ms referer=http://localhost:8890/tree
+[W 11:45:30.608 NotebookApp] Forbidden
+[W 11:45:30.609 NotebookApp] 403 GET /api/terminals?_=1530269162304 (127.0.0.1) 0.45ms referer=http://localhost:8890/tree
+[W 12:22:49.763 NotebookApp] Forbidden
+[W 12:22:49.763 NotebookApp] 403 GET /api/sessions?_=1530269162305 (127.0.0.1) 0.59ms referer=http://localhost:8890/tree
+[W 12:22:49.764 NotebookApp] Forbidden
+[W 12:22:49.764 NotebookApp] 403 GET /api/terminals?_=1530269162306 (127.0.0.1) 0.51ms referer=http://localhost:8890/tree
+[W 13:11:28.914 NotebookApp] Forbidden
+[W 13:11:28.914 NotebookApp] 403 GET /api/sessions?_=1530269162307 (127.0.0.1) 0.46ms referer=http://localhost:8890/tree
+[W 13:11:28.915 NotebookApp] Forbidden
+[W 13:11:28.915 NotebookApp] 403 GET /api/terminals?_=1530269162308 (127.0.0.1) 0.42ms referer=http://localhost:8890/tree
+[W 10:10:23.332 NotebookApp] Forbidden
+[W 10:10:23.336 NotebookApp] 403 GET /api/sessions?_=1530269162309 (127.0.0.1) 3.50ms referer=http://localhost:8890/tree
+[W 10:10:23.341 NotebookApp] Forbidden
+[W 10:10:23.341 NotebookApp] 403 GET /api/terminals?_=1530269162310 (127.0.0.1) 0.50ms referer=http://localhost:8890/tree
+[W 10:13:47.204 NotebookApp] Forbidden
+[W 10:13:47.204 NotebookApp] 403 GET /api/sessions?_=1530269162311 (127.0.0.1) 0.94ms referer=http://localhost:8890/tree
+[W 10:13:47.205 NotebookApp] Forbidden
+[W 10:13:47.206 NotebookApp] 403 GET /api/terminals?_=1530269162312 (127.0.0.1) 0.79ms referer=http://localhost:8890/tree
+[W 09:20:01.928 NotebookApp] Forbidden
+[W 09:20:01.928 NotebookApp] 403 GET /api/sessions?_=1530269162313 (127.0.0.1) 0.56ms referer=http://localhost:8890/tree
+[W 09:20:01.929 NotebookApp] Forbidden
+[W 09:20:01.929 NotebookApp] 403 GET /api/terminals?_=1530269162314 (127.0.0.1) 0.41ms referer=http://localhost:8890/tree
+[C 19:53:17.470 NotebookApp] received signal 15, stopping
+[I 19:53:17.471 NotebookApp] Shutting down 1 kernel
+[I 19:53:17.574 NotebookApp] Kernel shutdown: 298d5287-b4c5-48ea-b874-764757e4998d

@@ -99,6 +99,7 @@ class _Model(HACModel):
         data = parent.features
         X = np.array(data[data.columns[2:]])
         self.precomputed_ = -squareform(pdist(X, metric='euclidean'))
+        #self.precomputed_ = -squareform(pdist(X, metric='cosine'))
 
         matrix = ValueSortedDict()
         for i, j in itertools.combinations(range(n_clusters), 2):
@@ -108,6 +109,47 @@ class _Model(HACModel):
             indices_j = self[clusters[j]]
             # mean of all pairwise euclidean distances
             similarity = np.mean(self.precomputed_[indices_i][:, indices_j])
+            matrix[clusters[i], clusters[j]] = similarity
+            matrix[clusters[j], clusters[i]] = similarity
+
+        same_mat = ValueSortedDict()
+        for i in range(n_clusters):
+            # indices of embedding in ith cluster
+            indices_i = self[clusters[i]]
+            similarity = np.mean(self.precomputed_[indices_i][:, indices_i])
+            same_mat[clusters[i], clusters[i]] = similarity
+
+        return matrix
+
+    def compute_slim_similarity_matrix(self, parent=None):
+
+        # name and number of clusters
+        clusters = list(self._models)
+        n_clusters = len(clusters)
+
+        # precompute pairwise embedding distance
+        data = parent.features
+        X = np.array(data[data.columns[2:]])
+        clust_X = []
+        for i in range(n_clusters):
+            ind = self[clusters[i]]
+            clust_X.append(np.mean(X[ind, :], axis=0, keepdims=False))
+        
+        clust_Xa = np.vstack(clust_X)
+        #self.precomputed_ = -squareform(pdist(X, metric='euclidean'))
+        precomp_tmp = -squareform(pdist(clust_Xa, metric='cosine'))
+
+        matrix = ValueSortedDict()
+        self.precomputed_ = np.zeros([X.shape[0], X.shape[0]])
+        for i, j in itertools.combinations(range(n_clusters), 2):
+            # indices of embedding in ith cluster
+            indices_i = self[clusters[i]]
+            # indices of embedding in jth cluster
+            indices_j = self[clusters[j]]
+            # mean of all pairwise euclidean distances
+            similarity = precomp_tmp[i,j]
+            self.precomputed_[np.ix_(indices_i, indices_j)] = similarity
+            self.precomputed_[np.ix_(indices_j, indices_i)] = similarity
             matrix[clusters[i], clusters[j]] = similarity
             matrix[clusters[j], clusters[i]] = similarity
 
